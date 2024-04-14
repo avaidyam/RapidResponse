@@ -87,10 +87,10 @@ export const App = ({ ...props }) => {
   }, [alerts])
   return (
     <Grid container padding={1} spacing={2} {...props}> 
-      <Grid item xs={9}>
+      <Grid item xs={12} md={9}>
         <Creator onAdd={x => TextToSpeech(x) && setAlerts([...alerts, x])} />
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={12} md={3}>
         <Typography variant="h3">Active Alerts</Typography>
         <List items={alerts} onDelete={(x, idx) => TextToSpeech(x, 1) && alerts.splice(idx, 1) && setAlerts([...alerts])}></List>
       </Grid>
